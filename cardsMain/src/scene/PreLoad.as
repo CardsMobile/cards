@@ -13,9 +13,9 @@ package scene
 	{
 		private static var m_instance:PreLoad = new PreLoad;
 		
-		private var m_preBm:Array = ["npc_pa_enemy019.png"];
+		private var m_preBm:Array = ["npc_pa_enemy019.png", "monster_pa_enemy030.png"];
 		private var m_bmIndex:int = 0;
-		private var m_preXml:Array = ["npc_pa_enemy019.xml"];
+		private var m_preXml:Array = ["npc_pa_enemy019.xml", "monster_pa_enemy030.xml"];
 		private var m_xmlIndex:int = 0;
 		private var m_backFunc:Function;
 		

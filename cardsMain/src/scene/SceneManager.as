@@ -18,6 +18,7 @@ package scene
 		
 		private var m_mainMap:MainMap;
 		private var m_fightMap:FightMap;
+		private var m_fightView:Sprite;
 		
 		public function SceneManager()
 		{
@@ -62,8 +63,11 @@ package scene
 		{
 			if(m_fightMap == null) m_fightMap = new FightMap();
 			while(m_mapLayer.numChildren) m_mapLayer.removeChildAt(0);
-			
 			m_mapLayer.addChild(m_fightMap);
+			
+			if(m_fightView == null) m_fightView = new Sprite;
+			m_mapLayer.addChild(m_fightView);
+			FightHandler.instance.init(m_fightView);
 		}
 	}
 }
