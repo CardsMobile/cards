@@ -8,7 +8,12 @@ package
 	import flash.media.AudioPlaybackMode;
 	import flash.media.SoundMixer;
 	
+	import common.TickManager;
+	
 	import engine.StarlingEngine;
+	
+	import scene.PreLoad;
+	import scene.SceneManager;
 	
 	[SWF(backgroundColor="#000000")]
 	public class cards extends Sprite
@@ -29,7 +34,23 @@ package
 			stage.autoOrients = false;
 			SoundMixer.audioPlaybackMode = AudioPlaybackMode.AMBIENT;
 			
+			addEventListener(Event.ENTER_FRAME, starlingCheck);
 			StarlingEngine.instance.initStarling(this.stage);
+		}
+		
+		private function starlingCheck(e:Event):void
+		{
+			if(StarlingEngine.instance.starling.isStarted)
+			{
+				removeEventListener(Event.ENTER_FRAME, starlingCheck);
+				PreLoad.instance.load(startGame);
+			}
+		}
+		
+		private function startGame():void
+		{
+			TickManager.instance.init(this.stage);
+			SceneManager.instance.init();
 		}
 	}
 }

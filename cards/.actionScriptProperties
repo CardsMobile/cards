@@ -36,6 +36,7 @@
       </libraryPathEntry>
       <libraryPathEntry kind="3" linkType="1" path="/cardsEngine/bin/cardsEngine.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/cardsNet/bin/cardsNet.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/cardsMain/bin/cardsMain.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

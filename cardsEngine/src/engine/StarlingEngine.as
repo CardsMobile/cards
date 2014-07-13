@@ -1,6 +1,7 @@
 package engine
 {
 	import flash.display.Stage;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
 	import starling.core.Starling;
@@ -11,6 +12,7 @@ package engine
 		private static var m_instance:StarlingEngine;
 		private var m_starling:Starling;
 		private var m_layer:LayerView;
+		private var m_stage:Stage;
 		
 		public function StarlingEngine()
 		{
@@ -26,6 +28,7 @@ package engine
 		
 		public function initStarling(stage:Stage):void
 		{
+			m_stage = stage;
 			Starling.multitouchEnabled = false;
 			Starling.handleLostContext = false;
 			m_starling = new Starling(LayerView, stage,new Rectangle(0, 0, stage.fullScreenWidth, stage.fullScreenHeight));
@@ -43,9 +46,19 @@ package engine
 			m_starling.start();
 		}
 		
+		public function get starling():Starling
+		{
+			return m_starling;
+		}
+		
 		public function get rootLayer():LayerView
 		{
 			return m_layer;
+		}
+		
+		public function get mouseLocation():Point
+		{
+			return new Point(m_stage.mouseX, m_stage.mouseY);
 		}
 	}
 }

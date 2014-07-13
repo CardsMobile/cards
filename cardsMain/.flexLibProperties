@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
   <includeClasses>
-    <classEntry path="ui.UIManager"/>
+    <classEntry path="animation.MovieClipStarling"/>
+    <classEntry path="animation.TextureAtlasStarling"/>
+    <classEntry path="common.TickManager"/>
+    <classEntry path="common.TimeHandler"/>
     <classEntry path="scene.SceneManager"/>
+    <classEntry path="ui.UIManager"/>
+    <classEntry path="common.AssetsLoader"/>
+    <classEntry path="scene.MainMap"/>
+    <classEntry path="common.AssetsUtil"/>
+    <classEntry path="scene.PreLoad"/>
+    <classEntry path="scene.FightMap"/>
+    <classEntry path="scene.FightHandler"/>
+    <classEntry path="scene.Role"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
