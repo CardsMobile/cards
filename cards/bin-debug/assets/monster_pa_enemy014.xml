@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:8ce9b28090ab0eb83f7309615bce5853$ -->
+<TextureAtlas imagePath="monster_pa_enemy014.png">
+    <SubTexture name="monster_pa_enemy014_attack_10000" x="2" y="2" width="142" height="168" frameX="-131" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_10001" x="146" y="2" width="110" height="168" frameX="-161" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_10002" x="258" y="2" width="100" height="138" frameX="-166" frameY="-159" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_10003" x="360" y="2" width="94" height="154" frameX="-165" frameY="-145" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_20000" x="456" y="2" width="104" height="172" frameX="-171" frameY="-117" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_20001" x="562" y="2" width="146" height="170" frameX="-121" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_20002" x="710" y="2" width="216" height="144" frameX="-50" frameY="-153" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_20003" x="928" y="2" width="232" height="144" frameX="-50" frameY="-150" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_30000" x="1162" y="2" width="168" height="160" frameX="-137" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_30001" x="1332" y="2" width="200" height="158" frameX="-114" frameY="-121" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_30002" x="1534" y="2" width="256" height="142" frameX="-1" frameY="-137" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_30003" x="2" y="176" width="276" height="142" frameX="0" frameY="-137" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_40000" x="280" y="176" width="166" height="154" frameX="-138" frameY="-121" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_40001" x="448" y="176" width="174" height="150" frameX="-120" frameY="-123" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_40002" x="624" y="176" width="190" height="168" frameX="-69" frameY="-105" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_40003" x="816" y="176" width="186" height="168" frameX="-68" frameY="-105" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_50000" x="1004" y="176" width="142" height="182" frameX="-126" frameY="-121" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_50001" x="1148" y="176" width="110" height="156" frameX="-129" frameY="-125" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_50002" x="1260" y="176" width="102" height="198" frameX="-132" frameY="-83" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_attack_50003" x="1364" y="176" width="94" height="198" frameX="-141" frameY="-83" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_10000" x="1460" y="176" width="116" height="168" frameX="-135" frameY="-108" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_10001" x="1578" y="176" width="110" height="168" frameX="-136" frameY="-108" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_10002" x="1690" y="176" width="94" height="168" frameX="-138" frameY="-108" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_10003" x="1786" y="176" width="96" height="168" frameX="-137" frameY="-108" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_20000" x="1884" y="176" width="94" height="168" frameX="-168" frameY="-115" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_20001" x="2" y="376" width="84" height="168" frameX="-170" frameY="-115" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_20002" x="88" y="376" width="70" height="168" frameX="-170" frameY="-115" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_20003" x="160" y="376" width="78" height="168" frameX="-169" frameY="-115" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_30000" x="240" y="376" width="102" height="162" frameX="-172" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_30001" x="344" y="376" width="104" height="162" frameX="-172" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_30002" x="450" y="376" width="100" height="162" frameX="-173" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_30003" x="552" y="376" width="94" height="162" frameX="-173" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_40000" x="648" y="376" width="112" height="162" frameX="-166" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_40001" x="762" y="376" width="114" height="160" frameX="-166" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_40002" x="878" y="376" width="118" height="160" frameX="-165" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_40003" x="998" y="376" width="118" height="162" frameX="-165" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_50000" x="1118" y="376" width="116" height="184" frameX="-148" frameY="-121" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_50001" x="1236" y="376" width="110" height="184" frameX="-153" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_50002" x="1348" y="376" width="94" height="184" frameX="-168" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_stand_50003" x="1444" y="376" width="96" height="186" frameX="-167" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_10000" x="1542" y="376" width="96" height="174" frameX="-140" frameY="-109" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_10001" x="1640" y="376" width="82" height="166" frameX="-147" frameY="-107" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_10002" x="1724" y="376" width="88" height="170" frameX="-142" frameY="-112" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_10003" x="1814" y="376" width="88" height="164" frameX="-146" frameY="-109" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_20000" x="1904" y="376" width="96" height="164" frameX="-165" frameY="-117" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_20001" x="2" y="564" width="92" height="160" frameX="-158" frameY="-115" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_20002" x="96" y="564" width="82" height="156" frameX="-164" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_20003" x="180" y="564" width="88" height="152" frameX="-170" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_30000" x="270" y="564" width="114" height="152" frameX="-155" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_30001" x="386" y="564" width="114" height="154" frameX="-158" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_30002" x="502" y="564" width="114" height="154" frameX="-155" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_30003" x="618" y="564" width="110" height="152" frameX="-158" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_40000" x="730" y="564" width="110" height="162" frameX="-161" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_40001" x="842" y="564" width="118" height="156" frameX="-166" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_40002" x="962" y="564" width="128" height="158" frameX="-160" frameY="-120" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_40003" x="1092" y="564" width="118" height="166" frameX="-158" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_50000" x="1212" y="564" width="96" height="184" frameX="-164" frameY="-118" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_50001" x="1310" y="564" width="82" height="182" frameX="-170" frameY="-117" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_50002" x="1394" y="564" width="88" height="184" frameX="-169" frameY="-119" frameWidth="400" frameHeight="400"/>
+    <SubTexture name="monster_pa_enemy014_walk_50003" x="1484" y="564" width="88" height="190" frameX="-166" frameY="-118" frameWidth="400" frameHeight="400"/>
+</TextureAtlas>
