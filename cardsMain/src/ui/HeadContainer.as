@@ -44,7 +44,10 @@ package ui
 				Head(this["head"+i]).setView(i,bmpArr[i]);
 				Head(this["head"+i]).x = curx;
 				addChild(Head(this["head"+i]));
+				curx = Head(this["head"+i]).x + 104;
 			}
+			this.x = (960-width)*.5;
+			this.y = 640-height-10;
 		}
 		
 		/**
