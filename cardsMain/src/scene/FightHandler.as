@@ -30,16 +30,16 @@ package scene
 			m_leftList = new Vector.<Role>;
 			m_rightList = new Vector.<Role>;
 			
-			m_leftList[0] = new Role(0, 7, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
-			m_panel.addChild(m_leftList[0]);
-			m_leftList[1] = new Role(1, 7, "monster_pa_enemy026", 600, 70, 500, 500, 50, 2200, fightOverHandle);
+			m_leftList[1] = new Role(0, 7, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
 			m_panel.addChild(m_leftList[1]);
+			m_leftList[0] = new Role(1, 7, "monster_pa_enemy026", 600, 70, 500, 500, 50, 2200, fightOverHandle);
+			m_panel.addChild(m_leftList[0]);
 			m_leftList[2] = new Role(2, 7, "monster_pa_enemy014", 500, 140, 500, 500, 50, 1800, fightOverHandle);
 			m_panel.addChild(m_leftList[2]);
-			m_rightList[0] = new Role(3, 3, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
-			m_panel.addChild(m_rightList[0]);
-			m_rightList[1] = new Role(4, 3, "monster_pa_enemy026", 400, 70, 500, 500, 50, 2200, fightOverHandle);
+			m_rightList[1] = new Role(3, 3, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
 			m_panel.addChild(m_rightList[1]);
+			m_rightList[0] = new Role(4, 3, "monster_pa_enemy026", 400, 70, 500, 500, 50, 2200, fightOverHandle);
+			m_panel.addChild(m_rightList[0]);
 			m_rightList[2] = new Role(5, 3, "monster_pa_enemy014", 500, 140, 500, 500, 50, 1800, fightOverHandle);
 			m_panel.addChild(m_rightList[2]);
 			
@@ -48,7 +48,31 @@ package scene
 		
 		private function fightOverHandle(role:Role):void
 		{
+			var target:Role = findTarget(role.id);
+			if(target)
+			{
+				target.HP -= randomFight(role.fight);
+				SceneManager.instance.head.setBlood(target.id, target.HP, target.maxHP);
+			}
+		}
+		
+		private function findTarget(roleid:int):Role
+		{
+			var target:Role;
+			var list:Vector.<Role>;
+			list = roleid > 2 ? m_rightList : m_leftList;
+			var len:int = list.length;
+			for(var i:int=0; i < len; ++i)
+			{
+				var role:Role = list[i];
+				if(role && role.state != Role.DIE)
+				{
+					target = role;
+					break;
+				}
+			}
 			
+			return target;
 		}
 		
 		private function fightLoop():void

@@ -66,15 +66,23 @@ package scene
 		public function startFight():void
 		{
 			if(m_fightMap == null) m_fightMap = new FightMap();
-			while(m_mapLayer.numChildren) m_mapLayer.removeChildAt(0);
+			while(m_mapLayer.numChildren) 
+			{
+				m_mapLayer.removeChildAt(0);
+			}
 			m_mapLayer.addChild(m_fightMap);
 			
-			if(m_fightView == null) m_fightView = new Sprite;
+			if(m_fightView == null) m_fightView = new Sprite();
 			m_mapLayer.addChild(m_fightView);
 			FightHandler.instance.init(m_fightView);
 			
 			if(m_head == null) m_head = new HeadContainer;
 			StarlingEngine.instance.curStage.addChild(m_head);
+		}
+		
+		public function get head():HeadContainer
+		{
+			return m_head;
 		}
 	}
 }

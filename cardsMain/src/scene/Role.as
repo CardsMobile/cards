@@ -120,6 +120,11 @@ package scene
 			m_hp = hp;
 		}
 		
+		public function get maxHP():int
+		{
+			return m_maxhp;
+		}
+		
 		public function get state():int
 		{
 			return m_state;
@@ -138,6 +143,11 @@ package scene
 		public function get fightRate():int
 		{
 			return m_fightRate;
+		}
+		
+		public function get fight():int
+		{
+			return m_fight;
 		}
 		
 		public function isDie():Boolean
