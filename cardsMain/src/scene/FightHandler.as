@@ -30,16 +30,16 @@ package scene
 			m_leftList = new Vector.<Role>;
 			m_rightList = new Vector.<Role>;
 			
-			m_leftList[1] = new Role(0, 7, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
-			m_panel.addChild(m_leftList[1]);
 			m_leftList[0] = new Role(1, 7, "monster_pa_enemy026", 600, 70, 500, 500, 50, 2200, fightOverHandle);
 			m_panel.addChild(m_leftList[0]);
+			m_leftList[1] = new Role(0, 7, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
+			m_panel.addChild(m_leftList[1]);
 			m_leftList[2] = new Role(2, 7, "monster_pa_enemy014", 500, 140, 500, 500, 50, 1800, fightOverHandle);
 			m_panel.addChild(m_leftList[2]);
-			m_rightList[1] = new Role(3, 3, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
-			m_panel.addChild(m_rightList[1]);
 			m_rightList[0] = new Role(4, 3, "monster_pa_enemy026", 400, 70, 500, 500, 50, 2200, fightOverHandle);
 			m_panel.addChild(m_rightList[0]);
+			m_rightList[1] = new Role(3, 3, "monster_pa_enemy030", 500, 0, 500, 500, 50, 2000, fightOverHandle);
+			m_panel.addChild(m_rightList[1]);
 			m_rightList[2] = new Role(5, 3, "monster_pa_enemy014", 500, 140, 500, 500, 50, 1800, fightOverHandle);
 			m_panel.addChild(m_rightList[2]);
 			
@@ -113,7 +113,7 @@ package scene
 		private function randomFight(fight:int):int
 		{
 			var value:int;
-			value = fight + (Math.random()+0.5)*200;
+			value = fight + (Math.random()+0.5)*20;
 			return value;
 		}
 	}

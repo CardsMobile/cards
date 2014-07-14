@@ -43,10 +43,11 @@ package ui
 				this["head"+i] = new Head();
 				Head(this["head"+i]).setView(i,bmpArr[i]);
 				Head(this["head"+i]).x = curx;
+				Head(this["head"+i]).setBlood(500,500);
 				addChild(Head(this["head"+i]));
-				curx = Head(this["head"+i]).x + 104;
+				curx = Head(this["head"+i]).x + 106;
 			}
-			this.x = (960-width)*.5;
+			this.x = 94;
 			this.y = 640-height-10;
 		}
 		

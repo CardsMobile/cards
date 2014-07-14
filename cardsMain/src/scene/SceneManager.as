@@ -66,10 +66,7 @@ package scene
 		public function startFight():void
 		{
 			if(m_fightMap == null) m_fightMap = new FightMap();
-			while(m_mapLayer.numChildren) 
-			{
-				m_mapLayer.removeChildAt(0);
-			}
+			m_mapLayer.removeChildren();
 			m_mapLayer.addChild(m_fightMap);
 			
 			if(m_fightView == null) m_fightView = new Sprite();

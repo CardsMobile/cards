@@ -24,6 +24,7 @@ package ui
 			addChild(headicon);
 			blood = new Shape();
 			blood.y = 104;
+			addChild(blood);
 		}
 		
 		/**
@@ -37,7 +38,7 @@ package ui
 			blood.graphics.clear();
 			if(curBlood>0){
 				curW = W *(curBlood/maxBlood);
-				blood.graphics.beginFill(0xff0000, 0);
+				blood.graphics.beginFill(0xff0000, 1);
 				blood.graphics.drawRect(0, 0, curW, 5);
 				blood.graphics.endFill();
 			}else{
