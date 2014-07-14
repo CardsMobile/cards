@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:578ad5b90368d8af1dd52a19b1b0b3e3$ -->
+<TextureAtlas imagePath="digits.png">
+    <SubTexture name="red_-" x="2" y="2" width="14" height="9" frameX="0" frameY="-11" frameWidth="14" frameHeight="27"/>
+    <SubTexture name="red_0" x="18" y="2" width="20" height="27"/>
+    <SubTexture name="red_1" x="40" y="2" width="14" height="27"/>
+    <SubTexture name="red_2" x="56" y="2" width="20" height="27"/>
+    <SubTexture name="red_3" x="78" y="2" width="20" height="27"/>
+    <SubTexture name="red_4" x="100" y="2" width="20" height="27"/>
+    <SubTexture name="red_5" x="2" y="31" width="20" height="27"/>
+    <SubTexture name="red_6" x="24" y="31" width="20" height="27"/>
+    <SubTexture name="red_7" x="46" y="31" width="20" height="25" frameX="0" frameY="-1" frameWidth="20" frameHeight="27"/>
+    <SubTexture name="red_8" x="68" y="31" width="20" height="27"/>
+    <SubTexture name="red_9" x="90" y="31" width="20" height="27"/>
+</TextureAtlas>
