@@ -9,6 +9,8 @@ package scene
 	
 	import starling.display.Image;
 	import starling.display.Sprite;
+	
+	import ui.HeadContainer;
 
 	public class SceneManager
 	{
@@ -19,6 +21,8 @@ package scene
 		private var m_mainMap:MainMap;
 		private var m_fightMap:FightMap;
 		private var m_fightView:Sprite;
+		
+		private var m_head:HeadContainer;
 		
 		public function SceneManager()
 		{
@@ -68,6 +72,9 @@ package scene
 			if(m_fightView == null) m_fightView = new Sprite;
 			m_mapLayer.addChild(m_fightView);
 			FightHandler.instance.init(m_fightView);
+			
+			if(m_head == null) m_head = new HeadContainer;
+			StarlingEngine.instance.curStage.addChild(m_head);
 		}
 	}
 }

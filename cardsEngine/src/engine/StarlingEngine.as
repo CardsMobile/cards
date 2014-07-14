@@ -60,5 +60,10 @@ package engine
 		{
 			return new Point(m_stage.mouseX, m_stage.mouseY);
 		}
+		
+		public function get curStage():Stage
+		{
+			return m_stage;
+		}
 	}
 }
