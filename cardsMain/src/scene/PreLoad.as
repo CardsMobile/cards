@@ -7,20 +7,33 @@ package scene
 	import flash.net.URLRequestHeader;
 	import flash.utils.Dictionary;
 	
+	import animation.TextureAtlasStarling;
+	
 	import common.AssetsLoader;
 
 	public class PreLoad
 	{
 		private static var m_instance:PreLoad = new PreLoad;
 		
-		private var m_preBm:Array = ["npc_pa_enemy019.png", "monster_pa_enemy030.png", "monster_pa_enemy026.png", "monster_pa_enemy014.png", "digits.png"];
+		private var m_preBm:Array = ["npc_pa_enemy019.png", 
+			"monster_pa_enemy030.png", 
+			"monster_pa_enemy026.png", 
+			"monster_pa_enemy014.png", 
+			"digits.png", 
+			"100c.png"];
 		private var m_bmIndex:int = 0;
-		private var m_preXml:Array = ["npc_pa_enemy019.xml", "monster_pa_enemy030.xml", "monster_pa_enemy026.xml", "monster_pa_enemy014.xml", "digits.xml"];
+		private var m_preXml:Array = ["npc_pa_enemy019.xml", 
+			"monster_pa_enemy030.xml", 
+			"monster_pa_enemy026.xml", 
+			"monster_pa_enemy014.xml", 
+			"digits.xml", 
+			"100c.xml"];
 		private var m_xmlIndex:int = 0;
 		private var m_backFunc:Function;
 		
 		private var m_bmPool:Dictionary;
 		private var m_xmlPool:Dictionary;
+		private var m_atlasPool:Dictionary;
 		
 		public function PreLoad()
 		{
@@ -28,6 +41,7 @@ package scene
 			
 			m_bmPool = new Dictionary;
 			m_xmlPool = new Dictionary;
+			m_atlasPool = new Dictionary;
 		}
 		
 		public static function get instance():PreLoad
@@ -83,7 +97,7 @@ package scene
 			
 			if(m_xmlIndex == m_preXml.length)
 			{
-				m_backFunc.apply();
+				if(m_backFunc != null) m_backFunc.apply();
 				return;
 			}else{
 				loadXml("assets/"+m_preXml[m_xmlIndex++]);
@@ -100,6 +114,17 @@ package scene
 		{
 			var xml:XML = m_xmlPool[name];
 			return xml;
+		}
+		
+		public function getAtlas(res:String):TextureAtlasStarling
+		{
+			var atlas:TextureAtlasStarling = m_atlasPool[res];
+			if(atlas == null)
+			{
+				atlas = new TextureAtlasStarling(getBitmap(res).bitmapData, getXml(res));
+				m_atlasPool[res] = atlas;
+			}
+			return atlas;
 		}
 	}
 }

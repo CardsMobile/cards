@@ -1,30 +1,31 @@
 package ui
 {
-	import common.AssetsLoader;
-	import common.TickManager;
-	
 	import flash.display.Bitmap;
-	import flash.display.DisplayObject;
 	import flash.display.Sprite;
-	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	
+	import common.AssetsLoader;
+	import common.TickManager;
+	
+	import scene.SceneManager;
+	
 	public class Loading extends Sprite
 	{
-		private static var m_instance:Loading = new Loading;
+		private static var m_instance:Loading;
 		
 		private var m_textField:TextField;
 		
 		public function Loading()
 		{
 			if(m_instance) throw new Error("single instance");
-			super();
 			init();
 		}
 		
 		public static function get instance():Loading
 		{
+			if(m_instance == null) m_instance = new Loading;
 			return m_instance;
 		}
 		
@@ -36,8 +37,8 @@ package ui
 		private function loadComplete(path:String, obj:Object):void
 		{
 			var bitmap:Bitmap = obj as Bitmap;
-			bitmap.x = 960;
-			bitmap.y = 640;
+			bitmap.width = 960;
+			bitmap.height = 640;
 			addChild(bitmap);
 			
 			m_textField = new TextField();
@@ -47,8 +48,7 @@ package ui
 			m_textField.autoSize = TextFieldAutoSize.CENTER;
 			m_textField.text = "资源加载中";
 			addChild(m_textField);
-			TickManager.instance.doLoop(1000, textLoop);
-			this.addEventListener(Event.REMOVED_FROM_STAGE, removeFromState);
+			TickManager.instance.doLoop(500, textLoop);
 		}
 		
 		private var textindex:int = 0;
@@ -63,9 +63,37 @@ package ui
 			m_textField.text = text;
 		}
 		
-		private function removeFromState(e:Event):void
+		public function showStart():void
 		{
 			TickManager.instance.clearHandler(textLoop);
+			if(m_textField.parent) m_textField.parent.removeChild(m_textField);
+			m_textField = null;
+			
+			AssetsLoader.instance.load("assets/start.png", buttonComplete);
+		}
+		
+		private function buttonComplete(path:String, obj:Object):void
+		{
+			var button:Sprite = new Sprite;
+			var bitmap:Bitmap = obj as Bitmap;
+			button.addChild(bitmap);
+			var tf:TextField = new TextField;
+			tf.width = bitmap.width;
+			tf.autoSize = TextFieldAutoSize.CENTER;
+			tf.text = "开始游戏";
+			tf.y = 12;
+			tf.mouseEnabled = false;
+			button.addChild(tf);
+			button.addEventListener(MouseEvent.CLICK, start);
+			
+			button.x = (960 - button.width)/2;
+			button.y = 520;
+			addChild(button);
+		}
+		
+		private function start(e:MouseEvent):void
+		{
+			SceneManager.instance.init();
 		}
 	}
 }

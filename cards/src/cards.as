@@ -13,7 +13,8 @@ package
 	import engine.StarlingEngine;
 	
 	import scene.PreLoad;
-	import scene.SceneManager;
+	
+	import ui.Loading;
 	
 	[SWF(backgroundColor="#000000")]
 	public class cards extends Sprite
@@ -43,14 +44,16 @@ package
 			if(StarlingEngine.instance.starling.isStarted)
 			{
 				removeEventListener(Event.ENTER_FRAME, starlingCheck);
-				PreLoad.instance.load(startGame);
+				TickManager.instance.init(this.stage);
+				this.stage.addChild(Loading.instance);
+				PreLoad.instance.load(null);
+				TickManager.instance.doOnce(3000, startGame);
 			}
 		}
 		
 		private function startGame():void
 		{
-			TickManager.instance.init(this.stage);
-			SceneManager.instance.init();
+			Loading.instance.showStart();
 		}
 	}
 }

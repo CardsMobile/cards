@@ -36,7 +36,8 @@ package scene
 			
 			AssetsLoader.instance.load("assets/main_bg_grass_left.png", leftComplete);
 			AssetsLoader.instance.load("assets/main_bg_grass_right.png", rightComplete);
-			AssetsLoader.instance.load("assets/main_bg_mountain.png", downComplete);
+			AssetsLoader.instance.load("assets/main_bg_mountain_left.png", downleftComplete);
+			AssetsLoader.instance.load("assets/main_bg_mountain_right.png", downrightComplete);
 			
 			var atlas:TextureAtlasStarling = new TextureAtlasStarling(PreLoad.instance.getBitmap("npc_pa_enemy019").bitmapData, PreLoad.instance.getXml("npc_pa_enemy019"));
 			npc = new MovieClipStarling(atlas, "npc_pa_enemy019_st_", 6);
@@ -68,13 +69,23 @@ package scene
 			up.addChild(image);
 		}
 		
-		private function downComplete(path:String, obj:Object):void
+		private function downleftComplete(path:String, obj:Object):void
 		{
-			var down:Bitmap = obj as Bitmap;
-			var image:Image = AssetsUtil.instance.getImageFromBitmap(down);
+			var downb:Bitmap = obj as Bitmap;
+			var image:Image = AssetsUtil.instance.getImageFromBitmap(downb);
 			image.y = 200;
 //			image.blendMode = BlendMode.ADD;
-			up.addChild(image);
+			down.addChild(image);
+		}
+		
+		private function downrightComplete(path:String, obj:Object):void
+		{
+			var downb:Bitmap = obj as Bitmap;
+			var image:Image = AssetsUtil.instance.getImageFromBitmap(downb);
+			image.y = 200;
+			image.x = 528;
+			//			image.blendMode = BlendMode.ADD;
+			down.addChild(image);
 		}
 		
 		private function npcTouch(e:TouchEvent):void

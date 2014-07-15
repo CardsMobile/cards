@@ -59,6 +59,7 @@ package scene
 		{
 			if(m_mainMap == null) m_mainMap = new MainMap();
 			while(m_mapLayer.numChildren) m_mapLayer.removeChildAt(0);
+			while(StarlingEngine.instance.curStage.numChildren) StarlingEngine.instance.curStage.removeChildAt(0);
 			
 			m_mapLayer.addChild(m_mainMap);
 		}
@@ -74,6 +75,7 @@ package scene
 			FightHandler.instance.init(m_fightView);
 			
 			if(m_head == null) m_head = new HeadContainer;
+			else m_head.reset();
 			StarlingEngine.instance.curStage.addChild(m_head);
 		}
 		

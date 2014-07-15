@@ -1,9 +1,13 @@
 package scene
 {
+	import com.greensock.TweenLite;
+	
 	import flash.utils.getTimer;
 	
 	import animation.MovieClipStarling;
 	import animation.TextureAtlasStarling;
+	
+	import common.BloodFly;
 	
 	import starling.core.Starling;
 	import starling.display.Sprite;
@@ -14,8 +18,9 @@ package scene
 		private var m_mc:MovieClipStarling;
 		
 		public static const STAND:int = 1;
-		public static const FIGHT:int = 2;
-		public static const DIE:int = 3;
+		public static const WALK:int = 2;
+		public static const FIGHT:int = 3;
+		public static const DIE:int = 4;
 		
 		private var m_res:String = "";
 		private var m_state:int = 0;
@@ -31,6 +36,7 @@ package scene
 		private var m_lastFight:Number=0;
 		private var m_fightOver:Function;
 		
+		private var m_mcVec:Vector.<MovieClipStarling>;
 		private var m_standMc:MovieClipStarling;
 		private var m_fightMc:MovieClipStarling;
 		
@@ -49,59 +55,72 @@ package scene
 			this.x = lx;
 			this.y = ly;
 			m_fightOver = fightOver;
+			m_mcVec = new Vector.<MovieClipStarling>(5);
 			
 			doStand();
 		}
 		
 		public function doStand():void
 		{
-			if(m_state == STAND) return;
-			if(m_mc)
-			{
-				m_mc.removeFromParent(false);
-				m_mc.stop();
-				m_mc.removeEventListeners();
-			}
-			if(m_standMc == null)
-			{
-				var atlas:TextureAtlasStarling = new TextureAtlasStarling(PreLoad.instance.getBitmap(m_res).bitmapData, PreLoad.instance.getXml(m_res));
-				m_standMc = new MovieClipStarling(atlas, m_res+"_stand_3", 6);
-			}
-			m_mc = m_standMc;
-			if(m_direct > 5) m_mc.scaleX = -1;
-			else m_mc.scaleX = 1;
-			m_mc.play();
-			Starling.juggler.add(m_mc);
-			addChild(m_mc);
-			m_state = STAND;
+			changeAct(STAND, true);
 		}
 		
 		public function doFight():void
 		{
-			if(m_state == FIGHT) return;
-			m_lastFight = getTimer();
-			m_state = FIGHT;
+			changeAct(FIGHT, false);
+		}
+		
+		public function doWalk():void
+		{
+			changeAct(WALK, true);
+		}
+		
+		private function getRes(st:int):String
+		{
+			var str:String = m_res;
+			switch(st)
+			{
+				case STAND:
+					str += "_stand_3";
+					break;
+				case WALK:
+					str += "_walk_3";
+					break;
+				case FIGHT:
+					str += "_attack_3";
+					break;
+			}
+			return str;
+		}
+		
+		private function changeAct(st:int, loop:Boolean):void
+		{
+			if(m_state == st) return;
+			m_state = st;
+			if(m_state == FIGHT) m_lastFight = getTimer();
 			if(m_mc)
 			{
 				m_mc.removeFromParent(false);
 				m_mc.stop();
 				m_mc.removeEventListeners();
 			}
-			if(m_fightMc == null)
+			m_mc = m_mcVec[m_state];
+			if(m_mc == null)
 			{
-				var atlas:TextureAtlasStarling = new TextureAtlasStarling(PreLoad.instance.getBitmap(m_res).bitmapData, PreLoad.instance.getXml(m_res));
-				m_fightMc = new MovieClipStarling(atlas, m_res+"_attack_3", 6);
+				var atlas:TextureAtlasStarling = PreLoad.instance.getAtlas(m_res);
+				m_mc = new MovieClipStarling(atlas, getRes(m_state), 6);
+				m_mc.pivotX = m_mc.width/2;
+				m_mc.x = 0;
+				m_mcVec[m_state] = m_mc;
 			}
-			m_mc = m_fightMc;
 			if(m_direct > 5) m_mc.scaleX = -1;
 			else m_mc.scaleX = 1;
 			m_mc.currentFrame = 1;
-			m_mc.loop = false;
+			m_mc.loop = loop;
 			m_mc.play();
-			m_mc.addEventListener(Event.COMPLETE, fightComplete);
+			if(!loop) m_mc.addEventListener(Event.COMPLETE, fightComplete);
 			Starling.juggler.add(m_mc);
-			addChild(m_mc);
-			
+			addChildAt(m_mc, 0);
 		}
 		
 		private function fightComplete(e:Event):void
@@ -117,7 +136,17 @@ package scene
 		
 		public function set HP(hp:int):void
 		{
-			m_hp = hp;
+			if(hp >= m_hp)
+			{
+				m_hp = hp;
+			}else{
+				var blood:BloodFly = new BloodFly(hp - m_hp);
+				m_hp = hp;
+				blood.x = - blood.width/2;
+				blood.y = this.height/2;
+				addChild(blood);
+				blood.start();
+			}
 		}
 		
 		public function get maxHP():int
@@ -159,6 +188,13 @@ package scene
 		public function die():void
 		{
 			m_state = DIE;
+			if(m_mc) m_mc.stop();
+			
+			TweenLite.to(this, 2, {alpha:0, onComplete:dispose});
+		}
+		
+		public override function dispose():void
+		{
 			if(m_mc) m_mc.removeFromParent(true);
 			m_mc = null;
 			if(parent) this.removeFromParent(true);

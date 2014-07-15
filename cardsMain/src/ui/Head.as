@@ -41,6 +41,7 @@ package ui
 				blood.graphics.beginFill(0xff0000, 1);
 				blood.graphics.drawRect(0, 0, curW, 5);
 				blood.graphics.endFill();
+				if(filters != null) filters = null;
 			}else{
 				setHui();	
 			}

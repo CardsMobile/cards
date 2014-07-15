@@ -37,6 +37,14 @@ package ui
 			}
 		}
 		
+		public function reset():void
+		{
+			for(var i:int=0;i<6;i++){
+				Head(this["head"+i]).filters = null;
+				Head(this["head"+i]).setBlood(1,1);
+			}
+		}
+		
 		private function init():void {
 			var curx:int=104;
 			for(var i:int=0;i<6;i++){
