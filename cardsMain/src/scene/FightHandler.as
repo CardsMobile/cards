@@ -67,6 +67,7 @@ package scene
 			if(target)
 			{
 				target.HP -= randomFight(role.fight);
+				target.addEff();
 				SceneManager.instance.head.setBlood(target.id, target.HP, target.maxHP);
 			}
 		}
