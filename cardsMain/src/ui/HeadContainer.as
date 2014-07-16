@@ -1,12 +1,15 @@
 package ui
 {
+	import common.AssetsLoader;
+	
+	import engine.StarlingEngine;
+	
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	
-	import common.AssetsLoader;
-	
 	public class HeadContainer extends Sprite
 	{
+		private var f:FightOver;
 		private var head0:Head;
 		private var head1:Head;
 		private var head2:Head;
@@ -14,7 +17,8 @@ package ui
 		private var head4:Head;
 		private var head5:Head;
 		private var iconArr:Array=["assets/Axe.jpg","assets/BatRider.jpg","assets/BB.jpg","assets/DragonTurtle.jpg","assets/Ench.jpg","assets/DragonBaby.jpg"];
-		private var bmpArr:Array=[];
+		private var bmpArr:Array = new Array;
+		private var blood:Array=[1,1,1,1,1,1];
 		public function HeadContainer()
 		{
 			super();
@@ -66,7 +70,29 @@ package ui
 		 * 
 		 */		
 		public function setBlood(id:int,curBlood:int,maxBlood:int):void {
+			var b:Boolean;
 			Head(this["head"+id]).setBlood(curBlood,maxBlood);
+			blood[id] = curBlood;
+			trace("blood"+id+"===="+curBlood);
+			trace("blood1"+id+"===="+blood[0]+"===="+blood[1]+"===="+blood[2]);
+			trace("blood2"+id+"===="+blood[3]+"===="+blood[4]+"===="+blood[5]);
+			if(blood[0]<=0&&blood[1]<=0&&blood[2]<=0){
+				b = false;
+				fightover(b);
+			}
+			if(blood[3]<=0&&blood[4]<=0&&blood[5]<=0){
+				b = true;
+				fightover(b);
+			}
 		} 
+		
+		private function fightover(b:Boolean):void {
+			if(f==null){
+				f=new FightOver(b);
+			}else{
+				f.vs = b;
+			}
+			StarlingEngine.instance.curStage.addChild(f);
+		}
 	}
 }

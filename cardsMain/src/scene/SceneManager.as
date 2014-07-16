@@ -1,15 +1,16 @@
 package scene
 {
-	import flash.display.Bitmap;
-	
 	import common.AssetsLoader;
 	import common.AssetsUtil;
 	
 	import engine.StarlingEngine;
 	
+	import flash.display.Bitmap;
+	
 	import starling.display.Image;
 	import starling.display.Sprite;
 	
+	import ui.FightOver;
 	import ui.HeadContainer;
 
 	public class SceneManager
@@ -77,6 +78,8 @@ package scene
 			if(m_head == null) m_head = new HeadContainer;
 			else m_head.reset();
 			StarlingEngine.instance.curStage.addChild(m_head);
+			
+			
 		}
 		
 		public function get head():HeadContainer

@@ -1,12 +1,14 @@
 package scene
 {
-	import flash.display.Bitmap;
-	
 	import animation.MovieClipStarling;
 	import animation.TextureAtlasStarling;
 	
 	import common.AssetsLoader;
 	import common.AssetsUtil;
+	
+	import engine.StarlingEngine;
+	
+	import flash.display.Bitmap;
 	
 	import starling.core.Starling;
 	import starling.display.Image;
@@ -14,6 +16,8 @@ package scene
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
+	
+	import ui.Fuben;
 	
 	public class MainMap extends Sprite
 	{
@@ -87,13 +91,16 @@ package scene
 			//			image.blendMode = BlendMode.ADD;
 			down.addChild(image);
 		}
-		
+		private var fuben:Fuben;
 		private function npcTouch(e:TouchEvent):void
 		{
 			var touch:Touch = e.getTouch(this, TouchPhase.ENDED);
 			if(touch == null) return;
-			
-			SceneManager.instance.startFight();
+			if(fuben==null){
+				fuben = new Fuben;
+			}
+			fuben.open();
+			//SceneManager.instance.startFight();
 		}
 	}
 }
