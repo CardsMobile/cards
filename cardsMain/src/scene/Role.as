@@ -4,12 +4,14 @@ package scene
 	
 	import flash.utils.getTimer;
 	
+	import animation.EffectStarling;
 	import animation.MovieClipStarling;
 	import animation.TextureAtlasStarling;
 	
 	import common.BloodFly;
 	
 	import starling.core.Starling;
+	import starling.display.BlendMode;
 	import starling.display.Sprite;
 	import starling.events.Event;
 	
@@ -177,6 +179,15 @@ package scene
 		public function get fight():int
 		{
 			return m_fight;
+		}
+		
+		public function addEff():void
+		{
+			var eff:EffectStarling = new EffectStarling("100c", m_direct, 16);
+//			eff.x = 98;
+			eff.y = 94;
+			eff.blendMode = BlendMode.SCREEN;
+			addChild(eff);
 		}
 		
 		public function isDie():Boolean
